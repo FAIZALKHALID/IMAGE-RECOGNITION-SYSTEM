@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Recognition System</title>
+</head>
+<body>
+    <h2>Upload an image for prediction</h2>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <input type="submit" value="Predict">
+    </form>
+    {% if label %}
+        <h3>Prediction: {{ label }}</h3>
+        <img src="{{ url_for('static', filename=image) }}" width="300">
+    {% endif %}
+</body>
+</html>
